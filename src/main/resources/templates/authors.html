@@ -7,8 +7,9 @@
 </head>
 
 <body>
-	<h3><a href="/books"></a></h3>
-	<h3><a href="/authors"></a></h3>
+	<h3><a href="/books">All Books</a></h3>
+	<h3><a href="/authors">All Authors</a></h3>
+	<h3><a href="/genres">All Genres</a></h3>
 		<div>
 	<header>
 <h1>These are our authors</h1>
@@ -16,9 +17,10 @@
 	<h2>Book Authors</h2>
 	<ul>
 		<li th:each="author: ${authors}">
-		<a th:href="@{/author(bookTitle=${author.bookTitle})}" th:text="${author.lastName}"></a>
+		<a th:href="@{/author(id=${author.id})}" th:text="${author.firstName} + ' ' + ${author.lastName}"></a>
 		</li>
 	</ul>
 	</div>
+	<a href="http://localhost:8080/books-home">Home</a>
 </body>
 </html>

@@ -24,13 +24,13 @@ public class LibraryPopulator implements CommandLineRunner {
 		Genre nonFiction = new Genre("Non-Fiction");
 		genreRepo.save(nonFiction);
 
-		Author kathy = new Author("Kathy", "Sierra");
+		Author kathy = new Author("Kathy ", "Sierra");
 		authorRepo.save(kathy);
-		Author bert = new Author("Bert", "Bates");
+		Author bert = new Author("Bert ", "Bates");
 		authorRepo.save(bert);
-		Author elisabeth = new Author("Elisabeth", "Freeman");
+		Author elisabeth = new Author("Elisabeth ", "Freeman");
 		authorRepo.save(elisabeth);
-		Author clifford = new Author("Clifford", "Stoll");
+		Author clifford = new Author("Clifford ", "Stoll");
 		authorRepo.save(clifford);
 
 		Book book1 = new Book(nonFiction, "Head First Design Patterns", kathy, bert);

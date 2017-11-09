@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>A Book</title>
+</head>
+
+<body>
+
+	<header>
+		<h1>This is a Book</h1>
+	</header>
+	
+	<div>
+		<h2 th:text="${book.bookTitle}"></h2>
+		<h2 th:text="${book.genre.genre}"></h2>
+		<h2 th:text="${book.bookTitle} + ' ' + ${book.genre.genre}"></h2>
+		<h2 th:text="${book.bookAuthors}"></h2>
+		<a href="http://localhost:8080/books-home">Home</a>
+	</div>
+</body>
+</html>

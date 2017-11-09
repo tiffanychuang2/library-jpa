@@ -15,10 +15,12 @@
 	</header>
 	
 	<div th:each="book: ${books}">
-		<h2>		
-		<a th:href="@{/book(id=${book.id})}" th:text="${book.bookTitle}"></a>
+		<h2>
+		
+		<span th:text="'Book Title: ' + ${book.bookTitle} + ', Author: ' + ${book.bookAuthors} + ', Genre: ' + ${book.genre.genre}"></span>
+		
+		<!-- 	<a th:href="@{/book(id=${book.id})}" th:text="${book.bookTitle}"></a> -->
 		</h2>
 	</div>
-	<a href="http://localhost:8080/books-home">Home</a>
 </body>
 </html>

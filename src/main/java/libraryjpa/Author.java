@@ -1,6 +1,5 @@
 package libraryjpa;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -13,11 +12,13 @@ public class Author {
 
 	@Id
 	@GeneratedValue
+	private Long id;
+
 	private String firstName;
 	private String lastName;
 
-	@ManyToMany(mappedBy = "bookAuthor")
-	private Set<Book> books = new HashSet<Book>();
+	@ManyToMany(mappedBy = "bookAuthors")
+	private Set<Book> booksByAuthor; // used for individual pages ex: author.html, genre.html
 
 	// constructors
 	protected Author() {
@@ -29,12 +30,20 @@ public class Author {
 	}
 
 	// getters
+	public Long getId() {
+		return id;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
 
 	public String getLastName() {
 		return lastName;
+	}
+
+	public Set<Book> getBooksByAuthor() {
+		return booksByAuthor;
 	}
 
 	// setters
@@ -46,9 +55,13 @@ public class Author {
 		this.lastName = lastName;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
-		return firstName + "" + lastName;
+		return firstName + " " + lastName;
 	}
 
 }

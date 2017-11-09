@@ -8,15 +8,17 @@
 
 <body>
 <h3><a href="/books">All Books</a></h3>
-<h3><a href="/authors">The Authors</a></h3>
+<h3><a href="/authors">All Authors</a></h3>
+<h3><a href="/genres">All Genres</a></h3>
 	<header>
 		<h1>Our Library Books</h1>
 	</header>
 	
 	<div th:each="book: ${books}">
-		<h2>
-			<a th:href="@{/book(bookTitle=${book.bookTitle})}" th:text="${book.bookTitle}"></a>
+		<h2>		
+		<a th:href="@{/book(id=${book.id})}" th:text="${book.bookTitle}"></a>
 		</h2>
 	</div>
+	<a href="http://localhost:8080/books-home">Home</a>
 </body>
 </html>

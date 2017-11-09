@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>An Author</title>
+</head>
+
+<body>
+	<h3><a href="/books">All Books</a></h3>
+	<h3><a href="/authors">All Authors</a></h3>
+	<h3><a href="/genres">All Genres</a></h3>
+		
+	<header>
+		<h1>This is an Author</h1>
+	</header>
+		
+		<p th:text="${author.firstName + ' ' +author.lastName}"></p>
+		
+		<div th:each="currentBook: ${author.booksByAuthor}">  <!-- you can name "currentBook" whatever you want to. -->
+		<p th:text="${currentBook.bookTitle}"></p>
+		</div>
+		<a href="http://localhost:8080/books-home">Home</a>
+	</body>
+</html>

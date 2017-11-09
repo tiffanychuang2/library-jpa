@@ -3,18 +3,28 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>Genres</title>
+	<title>All Genres</title>
 </head>
 
 <body>
-
+	<h3><a href="/books">All Books</a></h3>
+	<h3><a href="/authors">All Authors</a></h3>
+	<h3><a href="/genres">All Genres</a></h3>
 	<header>
-		<h1>Genres</h1>
-	</header>
 	
-	<div>
-		<h2 th:text="${genre.genre}"></h2>
-		<a href="http://localhost:8080/books">Home</a>
-	</div>
+<h1>Available Genres</h1>
+</header>
+	<h2>Genres</h2>
+		
+		<ul>
+		<li th:each="genre: ${genres}">
+		<a th:href="@{/genre(id=${genre.id})}" th:text="${genre.genre}"></a>
+		</li>
+	</ul>		
+		
+	<!-- <div th:each="genre: ${genres}">
+		<p th:text="${genre.genre}"></p>
+	</div> -->
+	<a href="http://localhost:8080/books-home">Home</a>
 </body>
 </html>

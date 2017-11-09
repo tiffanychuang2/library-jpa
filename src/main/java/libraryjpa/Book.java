@@ -15,14 +15,14 @@ public class Book {
 
 	@Id
 	@GeneratedValue
-
+	private Long id;
 	private String bookTitle;
 
 	@ManyToOne
 	private Genre genre;
 
 	@ManyToMany
-	private Set<Author> bookAuthors;
+	private Set<Author> bookAuthors; // used for individual pages ex: author.html, genre.html
 
 	// constructors
 	protected Book() {
@@ -35,6 +35,10 @@ public class Book {
 	}
 
 	// getters
+	public Long getId() {
+		return id;
+	}
+
 	public Genre getGenre() {
 		return genre;
 	}
@@ -58,6 +62,10 @@ public class Book {
 
 	public void setBookAuthors(Set<Author> bookAuthors) {
 		this.bookAuthors = bookAuthors;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@Override
